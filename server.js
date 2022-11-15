@@ -1,24 +1,27 @@
-const path = require('path');
 const express = require('express');
-const session = require('express-session');
 const routes = require('./controllers');
-
 const sequelize = require('./config/connection');
+const path = require('path');
 
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// helper function
+const helpers = require('./utils/helpers');
+
+// handlebars
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create({helpers});
+
+// session (connects session to sequelize Database)
+const session = require('express-session');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// handlerbars
-const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-
-// Create session
+// create session 
 const sess = {
-  secret: process.env.SECRET,
-  cookie: {},
+  secret: "super super secret",
+  cookie: { originalMaxAge: 600000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -27,19 +30,18 @@ const sess = {
 };
 
 app.use(session(sess));
-
-// set handlerbars as the default template engine
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// set Handlebars as the default template engine
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 // turn on routes
 app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening at ${PORT}`));
+  app.listen(PORT, () => console.log('Now listening'));
 });
