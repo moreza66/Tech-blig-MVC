@@ -2,43 +2,42 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MVC Tech Blog</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      
-    
-    <nav class="navbar navbar-dark bg-light">
-      <h1>
-        <p class="blog-title">MVC Tech Blog </p>
-      </h1>
-    {{#if loggedIn}}
-    <a href="/" class="homepage">Homepage</a>
-    <a href="/dashboard">Dashboard</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/" class="homepage">Homepage</a>
-    <a href="/login">Login</a>
-    {{/if}}
-    </nav>
-    </header>
-    <main>
-      {{{ body }}}
-    </main>
-  </div>
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">home</a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <a href="/dashboard">dashboard</a>
+                <button id="logout" class="btn-no-style logout">logout</button>
+                {{else}}
+                <a href="/login">login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <div class="site-row">
+            <div class="site-name">
+                <h1>Tech Thoughts</h1>
+            </div>
+        </div>
+        <main>
+            {{{ body }}}
+        </main>
+    </div>
 
     {{#if loggedIn}}
     <script src="/javascript/logout.js"></script>
     {{/if}}
-
 </body>
 
 </html>
