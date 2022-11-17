@@ -19,3 +19,9 @@ An CMS-style blog site similar to a Wordpress site, where developers can publish
 
 - The is live at heroku.
 - The app is deployed in heroky at https://mo-new-tech-blog.herokuapp.com/
+
+### Screenshots
+
+![](./public/Images/Home-Page-ScreenShot.png)
+![](./public/Images/Dashboard-ScreenShot.png)
+![](./public/Images/Edit%20and%20Delete.png)
