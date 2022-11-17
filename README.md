@@ -43,3 +43,8 @@ NPM packages: bcrypt, connect-session-sequelize, dotenv, express, express-handle
   - source db/schema.sql
 - Run the app
   npm start
+
+## Questions
+
+For any questions about the project/repository please contact me @ [moreza.memar@gmail.com](mailto:moreza.memar@gmail.com) </br>
+GitHub @ [moreza66](https://github.com/moreza66)
