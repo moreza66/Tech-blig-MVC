@@ -25,3 +25,10 @@ An CMS-style blog site similar to a Wordpress site, where developers can publish
 ![](./public/Images/Home-Page-ScreenShot.png)
 ![](./public/Images/Dashboard-ScreenShot.png)
 ![](./public/Images/Edit%20and%20Delete.png)
+
+## Technologies
+
+HTML, CSS including Bootstrap, JavaScript
+MySQL
+Heroku
+NPM packages: bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize
