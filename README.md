@@ -32,3 +32,14 @@ HTML, CSS including Bootstrap, JavaScript
 MySQL
 Heroku
 NPM packages: bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize
+
+## Installation
+
+- Git clone the repo
+- Install npm by running the following in terminal
+  - npm install
+- Sql commands
+  - mysql -u root -p
+  - source db/schema.sql
+- Run the app
+  npm start
